@@ -95,7 +95,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
@@ -123,14 +122,16 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\style.css" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\UpdateAccount.aspx" />
-    <Content Include="Views\UserCreate.aspx" />
+    <Content Include="Views\UserCreateAccount.aspx" />
     <Content Include="Views\UserLogin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\User.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -157,11 +158,11 @@
       <DependentUpon>UpdateAccount.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Views\UserCreate.aspx.designer.vb">
-      <DependentUpon>UserCreate.aspx</DependentUpon>
+    <Compile Include="Views\UserCreateAccount.aspx.designer.vb">
+      <DependentUpon>UserCreateAccount.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserCreate.aspx.vb">
-      <DependentUpon>UserCreate.aspx</DependentUpon>
+    <Compile Include="Views\UserCreateAccount.aspx.vb">
+      <DependentUpon>UserCreateAccount.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Views\UserLogin.aspx.designer.vb">
