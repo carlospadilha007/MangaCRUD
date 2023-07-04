@@ -21,6 +21,15 @@ body{
   border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
+.wrapper2{
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
 .wrapper h2{
   position: relative;
   font-size: 22px;
@@ -78,7 +87,18 @@ form h3{
   background: #4070f4;
   cursor: pointer;
 }
+.input-box.button2 input{
+  color: #fff;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  cursor: pointer;
+}
 .input-box.button input:hover{
+  background: #0e4bf1;
+}
+.input-box.button2 input:hover{
   background: #0e4bf1;
 }
 form .text h3{
