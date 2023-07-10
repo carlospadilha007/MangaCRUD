@@ -27,4 +27,16 @@
         End Get
     End Property
 
+    Protected Sub btnLoginAccount_Click(sender As Object, e As EventArgs) Handles btnLoginAccount.Click
+        Dim viewModel As ViewModel = New ViewModel
+        Dim email = tbEmailLogin.Text.ToString
+        Dim pass = tbPasswordLogin.Text.ToString
+
+        'tentativa de parar o metodo postback caso o login não seja aceito
+        If viewModel.CheckLogin(email, pass) Then
+            btnLoginAccount.Attributes.Add("OnClientClick", "return true;")
+        Else
+            btnLoginAccount.Attributes.Add("OnClientClick", "return false;")
+        End If
+    End Sub
 End Class

@@ -8,12 +8,12 @@
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Tela de Registro</title>
+    <title>Tela de Atualização de cadastro</title>
     <link rel="stylesheet" href="../Resources/style.css"/>
 </head>
 <body>
     <div class="wrapper2">
-    <h2>Criar nova conta</h2>
+    <h2>Atualizar conta</h2>
     <form action="#" runat="server" id="formCreateAccount">
      
         <div class="input-box">

@@ -53,6 +53,19 @@ Public Class ViewModel
 
     End Sub
 
+
+    Public Function CheckLogin(ByVal email As String, password As String) As Boolean
+        Dim query As String = "SELECT * FROM UsersData WHERE email="
+        query &= "'" & email & "'"
+        query &= " AND password="
+        query &= "'" & password & "'"
+        If countUsers(query) = 1 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Private Function countUsers(ByVal selectString As String) As Int32
         '"SELECT * FROM UsersData Where email='teste3@email.com'"
         Using con As SqlConnection = New SqlConnection(conectString)
