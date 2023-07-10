@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
     <h2>Criar nova conta</h2>
-    <form action="#" runat="server" id="formCreateAccount">
+        <form id="formCreateAccount" runat="server">
       <div class="input-box">
           <asp:textbox runat="server" id="tbFirstName" placeholder="Nome" required></asp:textbox>
       </div>
@@ -30,13 +30,14 @@
       </div>
    
       <div class="input-box button">
-          <asp:Button ID="btnCreateAccount" runat="server" Text="Criar Conta" />
+            <asp:Button ID="btnCreateAccount" runat="server" Text="Criar Conta" PostBackUrl="~/Views/UserLogin.aspx" /> 
+         
       </div>
       <div class="text">
           
         <h3>Já possui uma conta? <a href="UserLogin.aspx">Logar Agora</a></h3>
       </div>
-    </form>
+        </form>
   </div>
 </body>
 </html>

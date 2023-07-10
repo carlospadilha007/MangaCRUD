@@ -120,4 +120,25 @@ Partial Public Class UpdateAccount
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnUpdateAccount As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''btnDeleteAccount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnDeleteAccount As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''PreviousPage property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property PreviousPage() As Manga.UserLogin
+        Get
+            Return CType(MyBase.PreviousPage,Manga.UserLogin)
+        End Get
+    End Property
 End Class

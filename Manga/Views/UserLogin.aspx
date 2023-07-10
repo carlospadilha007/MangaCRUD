@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="UserLogin.aspx.vb" Inherits="Manga.UserLogin" %>
+<%@ PreviousPageType VirtualPath="~/Views/UserCreateAccount.aspx" %>
 
 <!DOCTYPE html>
 
@@ -21,7 +22,7 @@
       </div>
    
       <div class="input-box button">
-          <asp:Button ID="btnLoginAccount" runat="server" Text="Entrar" />
+          <asp:Button ID="btnLoginAccount" runat="server" Text="Entrar" PostBackUrl="~/Views/UpdateAccount.aspx" />
       </div>
       <div class="text">
         <h3>Não possui uma conta? <a href="UserCreateAccount.aspx">Criar conta</a></h3>

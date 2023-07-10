@@ -39,4 +39,16 @@ Partial Public Class UserLogin
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnLoginAccount As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''PreviousPage property.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated property.
+    '''</remarks>
+    Public Shadows ReadOnly Property PreviousPage() As Manga.UserCreate
+        Get
+            Return CType(MyBase.PreviousPage,Manga.UserCreate)
+        End Get
+    End Property
 End Class

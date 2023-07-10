@@ -90,6 +90,15 @@ form h3{
 .input-box.button2 input{
   color: #fff;
   margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  cursor: pointer;
+}
+.input-box.button3 input{
+  color: #ff6961;
+  margin-top: 10px;
   letter-spacing: 1px;
   border: none;
   background: #4070f4;

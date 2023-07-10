@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="UpdateAccount.aspx.vb" Inherits="Manga.UpdateAccount" %>
+<%@ PreviousPageType VirtualPath="~/Views/UserLogin.aspx" %>
+
 
 <!DOCTYPE html>
 
@@ -37,6 +39,9 @@
    
       <div class="input-box button2">
           <asp:Button ID="btnUpdateAccount" runat="server" Text="Atualizar dados" />
+      </div>
+        <div class="input-box button3">
+          <asp:Button ID="btnDeleteAccount" runat="server" Text="Deletar Conta" />
       </div>
     </form>
   </div>
