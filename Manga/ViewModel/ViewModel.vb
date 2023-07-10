@@ -66,6 +66,23 @@ Public Class ViewModel
         End If
     End Function
 
+    Public Sub getUserData(ByRef user As User, ByVal email As String)
+        Using con As SqlConnection = New SqlConnection(conectString)
+            Dim stringQuery = "SELECT * FROM UsersData Where email="
+            stringQuery &= "'" & email & "'"
+            Dim adapter As New SqlDataAdapter(stringQuery, con)
+            Dim users As New DataTable
+            adapter.Fill(users)
+            Dim dataUser = users.Rows.Cast(Of DataRow)().FirstOrDefault()
+            user.userId = dataUser("Id")
+            user.firstName = dataUser("firstName")
+            user.lastName = dataUser("lastName")
+            user.email = dataUser("email")
+            user.password = dataUser("password")
+
+        End Using
+    End Sub
+
     Private Function countUsers(ByVal selectString As String) As Int32
         '"SELECT * FROM UsersData Where email='teste3@email.com'"
         Using con As SqlConnection = New SqlConnection(conectString)
@@ -98,11 +115,23 @@ Public Class ViewModel
             Dim u As Integer = n_users.Rows.Count
             Dim lastUser = n_users.Rows.Cast(Of DataRow)().FirstOrDefault()
 
-            Console.WriteLine(lastUser.GetType)
-            Console.WriteLine(lastUser("Id"))
             Return lastUser("Id")
         End Using
 
     End Function
+
+    Public Sub deleteUser(ByVal userId As Int32)
+
+        Dim stringQuery = "DELETE FROM UsersData WHERE id="
+        stringQuery &= userId.ToString
+        Using con As SqlConnection = New SqlConnection(conectString)
+            Dim cmd As New SqlCommand(stringQuery, con)
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = userId
+            con.Open()
+            cmd.ExecuteNonQuery()
+            con.Close()
+
+        End Using
+    End Sub
 
 End Class
