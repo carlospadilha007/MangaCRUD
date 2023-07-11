@@ -33,7 +33,7 @@
         <asp:textbox runat="server" id="tbUpdatePassword" Text="" ></asp:textbox>
       </div>
       <div class="input-box">
-          <asp:Label ID="lbNewPassword" runat="server" Text="Nova Senha"></asp:Label>
+          <asp:Label ID="lbNewPassword" runat="server" Text="Nova Senha" ></asp:Label>
         <asp:textbox runat="server" id="tbNewPassword" Text=""></asp:textbox>
       </div>
    
@@ -41,6 +41,7 @@
           <asp:Button ID="btnUpdateAccount" runat="server" Text="Atualizar dados" />
       </div>
         <div class="input-box button3">
+            <asp:Label ID="lbMail" runat="server" Text="#" Visible="False"></asp:Label>
           <asp:Button ID="btnDeleteAccount" runat="server" Text="Deletar Conta" />
       </div>
     </form>

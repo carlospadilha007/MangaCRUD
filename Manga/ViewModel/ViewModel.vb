@@ -120,7 +120,7 @@ Public Class ViewModel
 
     End Function
 
-    Public Sub deleteUser(ByVal userId As Int32)
+    Public Sub deleteUser(ByVal userId As Integer)
 
         Dim stringQuery = "DELETE FROM UsersData WHERE id="
         stringQuery &= userId.ToString
@@ -131,6 +131,43 @@ Public Class ViewModel
             cmd.ExecuteNonQuery()
             con.Close()
 
+        End Using
+    End Sub
+
+    Public Sub UpdateUser(ByRef user As User, ByVal userId As Integer, fName As String, lName As String, email As String, newPass As String)
+        Dim stringQuery = "UPDATE UsersData SET firstName="
+        ' Nome
+        If (fName = "") Then
+            fName = user.firstName
+        End If
+        'Sobrenome
+        If (lName = "") Then
+            lName = user.lastName
+        End If
+        'email
+        If (email = "") Then
+            email = user.email
+        End If
+        'senha
+        If (newPass = "") Then
+            newPass = user.password
+        End If
+
+        stringQuery &= "'" & fName & "'" & " lastName='" & lName & "'  email='" & email & "'" & " password='" & newPass & "'" & " WHERE id=" & userId.ToString
+
+
+        Using con As New SqlConnection(conectString)
+            Using cmd As New SqlCommand(stringQuery, con)
+
+                cmd.Parameters.Add("@firstName", SqlDbType.NVarChar).Value = fName
+                cmd.Parameters.Add("@lastName", SqlDbType.NVarChar).Value = lName
+                cmd.Parameters.Add("@email", SqlDbType.NVarChar).Value = email
+                cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = newPass
+
+                con.Open()
+                cmd.ExecuteNonQuery()
+                con.Close()
+            End Using
         End Using
     End Sub
 
