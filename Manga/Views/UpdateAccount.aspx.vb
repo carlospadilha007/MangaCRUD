@@ -10,10 +10,10 @@
             If Not Page.PreviousPage Is Nothing Then
                 Dim email = PreviousPage.getEmail.ToString()
                 viewModel.getUserData(userData, email)
-                tbUpdateFirstName.Text = userData.firstName
-                tbUpdateLastName.Text = userData.lastName
-                tbUpdateEmail.Text = userData.email
-                tbUpdatePassword.Text = userData.password
+                tbUpdateFirstName.Text = RTrim(userData.firstName)
+                tbUpdateLastName.Text = RTrim(userData.lastName)
+                tbUpdateEmail.Text = RTrim(userData.email)
+                tbUpdatePassword.Text = RTrim(userData.password)
 
                 userEmail = userData.email
                 lbMail.Text = userData.email
@@ -34,11 +34,14 @@
     Protected Sub btnUpdateAccount_Click(sender As Object, e As EventArgs) Handles btnUpdateAccount.Click
         Dim viewModel As ViewModel = New ViewModel
         Dim fName As String, lName As String, email As String, newPass As String
+        userEmail = lbMail.Text.ToString
         viewModel.getUserData(userData, userEmail)
-        fName = tbUpdateFirstName.ToString
-        lName = tbUpdateLastName.ToString
-        email = tbUpdateEmail.ToString
-        newPass = tbNewPassword.ToString
+        fName = RTrim(tbUpdateFirstName.Text.ToString)
+        lName = RTrim(tbUpdateLastName.Text.ToString)
+        email = RTrim(tbUpdateEmail.Text.ToString)
+        newPass = RTrim(tbNewPassword.Text.ToString)
         viewModel.UpdateUser(userData, userData.userId, fName, lName, email, newPass)
+        lbMail.Text = userData.email
+
     End Sub
 End Class

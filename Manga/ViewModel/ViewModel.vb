@@ -150,10 +150,11 @@ Public Class ViewModel
         End If
         'senha
         If (newPass = "") Then
-            newPass = user.password
+            newPass = RTrim(user.password)
         End If
 
-        stringQuery &= "'" & fName & "'" & " lastName='" & lName & "'  email='" & email & "'" & " password='" & newPass & "'" & " WHERE id=" & userId.ToString
+        stringQuery &= "'" & fName & "'" & ", lastName=" & "'" & lName & "'" & ",  email='" & email & "'" &
+            ", password='" & newPass & "'" & " WHERE id=" & userId.ToString
 
 
         Using con As New SqlConnection(conectString)
@@ -169,6 +170,7 @@ Public Class ViewModel
                 con.Close()
             End Using
         End Using
+        user.email = email
     End Sub
 
 End Class
